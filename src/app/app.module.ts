@@ -8,6 +8,7 @@ import { TestComponent  } from './test/test.component';
 import { CompIntComponent } from './comp-int/comp-int.component';
 import { ListCompComponent } from './list-comp/list-comp.component';
 import { EmpServiceService } from './emp-service.service';
+import { HttpClientModule }  from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EmpServiceService } from './emp-service.service';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule        
+    AppRoutingModule,
+    HttpClientModule       
   ],
   providers: [EmpServiceService],
   bootstrap: [AppComponent]

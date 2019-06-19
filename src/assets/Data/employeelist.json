@@ -1,0 +1,5 @@
+[
+    {"firstName" : "Bharat" , "lastName":"Raj", "location":"Chennai"},
+    {"firstName" : "kumar", "lastName": "selvam","location":"Bangalore"}       ,
+    {"firstName":"selin", "lastName":"kumar","location":"USA"}
+]
