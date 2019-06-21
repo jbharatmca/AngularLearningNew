@@ -8,10 +8,10 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
       employee-details works!
     </p>
     <h2> select employee id : {{empid}} </h2>
-    <button (click)="gotoPrevious">Previous</button>
-    <button (click)="gotoNext">Next</button>
+    <button (click)="gotoPrevious()">Previous</button>
+    <button (click)="gotoNext()">Next</button>
     
-    <button (click)="gotoEmpDetails"> EmployeeDetail </button>
+    <button (click)="gotoEmpDetails()"> EmployeeDetail </button>
   `,
   styles: []
 })

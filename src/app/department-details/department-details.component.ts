@@ -6,12 +6,10 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router'
   template: `
       <p> Department details works!</p>
       <h2> you are selected department id is : {{departmentid}} </h2>
-      <a (click)="gotoPrevious">Previous </a>
-      <a (click)="gotoNext">Next</a>
-      
-      <button (click)="gotoDepartment">DepartmentDetails</button>
-  `,
-  styleUrls: ['./department-details.component.css']
+      <button (click)="gotoBack()"> back </button>
+      <a routerLink="/departmentlist" routerLinkActive="active">Department</a>
+        `,
+  styles: [``]
 })
 export class DepartmentDetailsComponent implements OnInit {
 
@@ -21,10 +19,10 @@ export class DepartmentDetailsComponent implements OnInit {
   ngOnInit() {
     //let id = parseInt(this.route.snapshot.paramMap.get("id"));
     //this.departmentid = id;
-this.activeRoute.paramMap.subscribe((params : ParamMap) => {
-let id = parseInt(params.get('id'));
-this.departmentid = id;
-});
+    this.activeRoute.paramMap.subscribe((params : ParamMap) => {
+    let id = parseInt(params.get('id'));
+    this.departmentid = id;
+    });
 }
 gotoPrevious()
 {
@@ -35,8 +33,10 @@ gotoNext(){
   let nextId = this.departmentid + 1;
   this.route.navigate(['/departmentlist', nextId]);
 }
-gotoDepartment(){
+gotoBack(){
+  console.log("hitting the button");
   let selectedId = this.departmentid ? this.departmentid : null;
   this.route.navigate(['/departmentlist',{id:selectedId}]);
+  //this.route.navigate(['../', {id:selectedId}], {relativeTo:this.activeRoute});
 }
 }
